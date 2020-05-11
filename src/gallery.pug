@@ -1,0 +1,61 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      section.gallery
+        .gallery__item
+          .gallery__prewiev
+            a(href='./assets/img/gallery1.jpg' data-fancybox='album1' data-thumbs='{"autoStart":true}')
+              img(src='./assets/img/gallery1.jpg')
+              .gallery__info
+                h2.gallery__title успешные проекты
+                span.btn СМОТРЕТЬ
+          .gallery__album
+            a(href='./assets/img/gallery2.jpg' data-fancybox='album1' data-thumb='./assets/img/gallery2.jpg')
+            a(href='./assets/img/gallery3.jpg' data-fancybox='album1' data-thumb='./assets/img/gallery3.jpg')
+            a(href='./assets/img/gallery4.jpg' data-fancybox='album1' data-thumb='./assets/img/gallery4.jpg')
+
+        .gallery__item
+          .gallery__prewiev
+            a(href='./assets/img/gallery2.jpg' data-fancybox='album2' data-thumbs='{"autoStart":true}')
+              img(src='./assets/img/gallery2.jpg')
+              .gallery__info
+                h2.gallery__title установленные лифты
+                span.btn СМОТРЕТЬ
+            .gallery__album
+              a(href='./assets/img/gallery1.jpg' data-fancybox='album2' data-thumb='./assets/img/gallery1.jpg')
+              a(href='./assets/img/gallery3.jpg' data-fancybox='album2' data-thumb='./assets/img/gallery3.jpg')
+              a(href='./assets/img/gallery4.jpg' data-fancybox='album2' data-thumb='./assets/img/gallery4.jpg')    
+        
+        .gallery__item
+          .gallery__prewiev
+            a(href='./assets/img/gallery3.jpg' data-fancybox='album3' data-thumbs='{"autoStart":true}')
+              img(src='./assets/img/gallery3.jpg')
+              .gallery__info
+                h2.gallery__title процесс установки
+                span.btn СМОТРЕТЬ
+            .gallery__album
+              a(href='./assets/img/gallery1.jpg' data-fancybox='album3' data-thumb='./assets/img/gallery1.jpg')
+              a(href='./assets/img/gallery2.jpg' data-fancybox='album3' data-thumb='./assets/img/gallery2.jpg')
+              a(href='./assets/img/gallery4.jpg' data-fancybox='album3' data-thumb='./assets/img/gallery4.jpg')
+
+        .gallery__item
+          .gallery__prewiev
+            a(href='./assets/img/gallery4.jpg' data-fancybox='album4' data-thumbs='{"autoStart":true}')
+              img(src='./assets/img/gallery4.jpg')
+              .gallery__info
+                  h2.gallery__title наш офис
+                  span.btn СМОТРЕТЬ
+            .gallery__album
+              a(href='./assets/img/gallery1.jpg' data-fancybox='album4' data-thumb='./assets/img/gallery1.jpg')
+              a(href='./assets/img/gallery2.jpg' data-fancybox='album4' data-thumb='./assets/img/gallery2.jpg')
+              a(href='./assets/img/gallery3.jpg' data-fancybox='album4' data-thumb='./assets/img/gallery3.jpg')
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

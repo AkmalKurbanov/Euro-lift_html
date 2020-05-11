@@ -1,0 +1,7 @@
+@import "mixins/fontface";
+
+
+@include font-face("Stolzl", "../assets/fonts/Stolzl-Regular", 400);
+@include font-face("Stolzl", "../assets/fonts/Stolzl-Light", 300);
+@include font-face("Stolzl-Book", "../assets/fonts/Stolzl-Book", 400);
+

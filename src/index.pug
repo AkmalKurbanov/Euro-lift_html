@@ -1,0 +1,41 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      section.main-screen(style="background-image: url('./assets/img/main1.jpg')")
+        .container
+          .main-screen__slider.slider
+            .swiper-container
+                .swiper-wrapper
+                  mixin slide(title,text,link)
+                    .swiper-slide
+                      .slider__title.title.title--secondery-title=title 
+                      .slider__text=text 
+                      a(href=link class="slider__more") Подробнее 
+                        i.icon-play
+                  +slide('ПАССАЖИРСКИЕ КОНВЕЙЕРЫ', 'Наши пасажирские конвейеры устанавливают стандарты в дизайне, энергоэффективности, безопасноти и энергносбережении.', '#')
+            .navigation    
+              .prev.slider-button
+                i.icon-angle
+              .next.slider-button
+                i.icon-angle
+ 
+
+
+
+
+
+
+        
+
+
+     
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

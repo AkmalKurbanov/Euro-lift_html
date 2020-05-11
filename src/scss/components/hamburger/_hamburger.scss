@@ -1,0 +1,89 @@
+  .nav-toggle {
+    display: flex;
+    cursor: pointer;
+    margin-left: rem(40px);
+    height: rem(22px);
+    width: rem(140px);
+
+    @include sm {
+      margin-left: rem(20px);
+    }
+
+    @include xs {
+      margin-left: 0;
+      width: auto;
+    }
+
+    &:hover {
+      .nav-toggle__icon {
+        i {
+          background-color: $mc;
+        }
+      }
+
+      .nav-toggle__button {
+        color: $mc;
+      }
+    }
+
+    &__button {
+      color: $wc;
+      font-family: $stb;
+      text-transform: uppercase;
+      font-size: rem(18px);
+      transition: $tr;
+      font-family: $stb;
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 rem(15px);
+
+      @include xs {
+        font-size: rem(15px);
+      }
+
+      &--visible {
+        display: none;
+      }
+    }
+
+    &__icon {
+      width: rem(30px);
+      position: relative;
+
+      i {
+        width: rem(30px);
+        height: rem(2px);
+        background-color: $wc;
+        border-radius: rem(1px);
+        transition: $tr;
+        display: block;
+
+        &:nth-child(2) {
+          transform: translateY(7px);
+        }
+
+        &:last-child {
+          transform: translateY(14px);
+        }
+      }
+    }
+
+    &.hamburger--open {
+      i {
+        &:first-child {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateY(8px) translateX(-100%);
+          pointer-events: none;
+        }
+
+        &:last-child {
+          transform: translateY(4px) rotate(-45deg);
+        }
+      }
+    }
+
+  }

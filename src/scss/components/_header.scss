@@ -1,0 +1,179 @@
+.float-social {
+  display: none;
+  padding: rem(5px) 0;
+  z-index: 1;
+  background-color: $wc;
+  transition: $tr;
+  position: fixed;
+
+  @include xs {
+    display: inline-block;
+
+    .social {
+      ul {
+        li {
+          display: block;
+          margin-bottom: rem(5px);
+        }
+      }
+    }
+  }
+}
+
+.header {
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__top {
+    padding: rem(17px) 0;
+    box-sizing: border-box;
+
+    @include md {
+      padding: rem(10px) 0;
+    }
+
+    @include xs {
+      display: none;
+    }
+  }
+
+  &__contacts-item {
+    @include xs {
+      display: none;
+    }
+
+    ul {
+      li {
+        display: inline-block;
+        font-family: $stb;
+        margin-right: rem(25px);
+
+        @include lg {
+          margin-right: rem(15px);
+        }
+
+        @include md {
+          margin-right: rem(5px);
+        }
+
+        &:last-child {
+          margin-right: 0;
+
+          @include sm {
+            margin-top: rem(10px);
+          }
+        }
+
+        * {
+          color: $bc;
+          font-size: rem(18px);
+
+          @include lg {
+            font-size: rem(15px);
+          }
+
+          @include md {
+            font-size: rem(13px);
+          }
+        }
+
+        a {
+          &:hover {
+            color: $mc;
+          }
+        }
+
+        i {
+          color: $mc;
+          margin-right: rem(8px);
+
+          @include lg {
+            margin-right: rem(5px);
+          }
+        }
+      }
+    }
+  }
+
+  &__main {
+    background-color: $bc;
+    padding: rem(20px) 0;
+  }
+
+  &__main-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__main-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include xs {
+      display: none;
+    }
+
+    &.main-item-js {
+      padding-right: rem(15px);
+      box-sizing: border-box;
+
+      @include xs {
+        display: flex;
+        padding-right: 0;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+
+  .menu {
+    width: 100%;
+    background-color: #20232a;
+    box-sizing: border-box;
+    transform: translateX(-200%);
+    transition: all .6s;
+    position: absolute;
+    z-index: 2;
+
+    &.menu-open {
+      transform: translateX(0);
+    }
+
+    .nav {
+      padding: rem(28px) 0;
+
+      &__item {
+        margin-bottom: rem(20px);
+
+        a {
+          color: #535458;
+          text-transform: uppercase;
+          font-family: $stb;
+
+          &:hover {
+            color: $wc;
+          }
+        }
+
+        &--active {
+          a {
+            color: $wc;
+          }
+        }
+
+        &--cb {
+          display: none;
+
+          @include xs {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

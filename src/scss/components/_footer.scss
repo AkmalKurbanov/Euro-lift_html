@@ -1,0 +1,249 @@
+.footer {
+  flex: 0 0 auto;
+  background-color: #20232a;
+
+  &__wrap {
+    padding: rem(65px) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include lg {
+      padding: rem(50px) 0 rem(20px);
+      flex-wrap: wrap;
+    }
+
+    @include md {
+      padding: rem(40px) 0 rem(10px);
+      flex-wrap: wrap;
+    }
+
+    @include sm {
+      padding: rem(30px) 0 0;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    flex-basis: 25%;
+
+    @include lg {
+      flex-basis: 50%;
+      margin-bottom: rem(30px);
+    }
+
+    @include xs {
+      flex-basis: 100%;
+    }
+  }
+
+  &__text {
+    padding: rem(20px) 0 rem(30px);
+    max-width: rem(280px);
+    width: 100%;
+
+    p {
+      color: #c1c1c1;
+      font-weight: 300;
+    }
+  }
+
+  &__title {
+    color: $wc;
+    text-transform: uppercase;
+    font-size: rem(18px);
+    margin-bottom: rem(30px);
+
+    @include lg {
+      margin-bottom: rem(20px);
+      font-size: rem(17px);
+    }
+
+    @include md {
+      margin-bottom: rem(15px);
+      font-size: rem(16px);
+    }
+
+    @include sm {
+      margin-bottom: rem(10px);
+      font-size: rem(15px);
+    }
+  }
+
+  &__nav {
+    li {
+      margin-bottom: rem(20px);
+
+      @include lg {
+        margin-bottom: rem(15px);
+      }
+
+      @include md {
+        margin-bottom: rem(10px);
+      }
+
+      @include sm {
+        margin-bottom: rem(5px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #c1c1c1;
+        text-transform: uppercase;
+        font-family: $stb;
+
+        @include lg {
+          font-size: rem(15px);
+        }
+
+        @include md {
+          font-size: rem(14px);
+        }
+
+        @include sm {
+          font-size: rem(13px);
+        }
+
+        &:hover {
+          color: $mc;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    li {
+      margin-bottom: rem(25px);
+
+      @include lg {
+        margin-bottom: rem(20px);
+      }
+
+      @include md {
+        margin-bottom: rem(15px);
+      }
+
+      @include sm {
+        margin-bottom: rem(10px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      i {
+        color: $mc;
+        margin-right: rem(20px);
+
+        @include lg {
+          margin-right: rem(15px);
+        }
+
+        @include md {
+          margin-right: rem(10px);
+        }
+
+        @include sm {
+          margin-right: rem(5px);
+        }
+      }
+
+      a {
+        &:hover {
+          color: $mc;
+        }
+      }
+
+      * {
+        color: #c1c1c1;
+        font-family: $stb;
+
+        @include lg {
+          font-size: rem(15px);
+        }
+
+        @include md {
+          font-size: rem(14px);
+        }
+      }
+    }
+  }
+
+
+  .social {
+    li {
+      a {
+        color: $mc;
+
+        &:hover {
+          color: $wc;
+        }
+      }
+
+      &:first-child {
+        width: auto;
+
+        a {
+          i {
+            &:before {
+              margin-left: 0 !important;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+  &__bottom {
+    background-color: $bc;
+    color: $wc;
+    padding: rem(15px) 0;
+  }
+
+  &__bottom-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include xs {
+      margin-bottom: rem(10px);
+    }
+
+    p {
+      color: #969696;
+      font-size: rem(14px);
+
+      @include xs {
+        text-align: center;
+      }
+    }
+  }
+
+  &__frame {
+    iframe {
+      height: rem(32px);
+      border: none;
+      overflow: hidden;
+      max-width: rem(225px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

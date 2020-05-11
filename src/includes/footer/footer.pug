@@ -1,0 +1,53 @@
+footer.footer
+  .container
+    .footer__wrap
+      .footer__item
+        include ../../includes/logo/logo
+        .footer__text
+          p Это текст-"рыба", часто используемый в печати и <br> вэб-дизайне.
+        include ../../includes/social/social
+      .footer__item
+        mixin footerTitle(title)
+          .footer__title=title 
+        +footerTitle('наши услуги')
+        ul.footer__nav
+          mixin footerNav(item, link)
+            li 
+              a(href=link)=item
+          +footerNav('лифты', '#')    
+          +footerNav('эскалаторы', '#')    
+          +footerNav('пассажирские конвейеры', '#')
+      .footer__item
+        +footerTitle('решения для')
+        ul.footer__nav
+          +footerNav('жилые дома', '#')
+          +footerNav('инфраструктурные оъекты', '#')
+          +footerNav('офисные здания', '#')
+          +footerNav('торговые центры', '#')
+      .footer__item
+        +footerTitle('контакты')
+        ul.footer__contacts
+          li
+            i.icon-mark
+            span г.Бишкек, ул. Кулатова 1А  
+          li
+            a(href="tel:+996312592312")
+              i.icon-ph
+              | +996 312 592 312
+          li
+            a(href="mailto:eurolift.kg@gmail.com")
+              i.icon-env1
+              | eurolift.kg@gmail.com
+        
+    
+        
+
+
+  .footer__bottom
+    .container
+      .footer__bottom-wrap
+        .footer__copyright
+          p &copy; ОсОО “Евролифт” 2020. Все права защищены.
+        .footer__frame  
+          iframe(src="https://akmalkurbanov.github.io/copyright_Queen/white.html")  
+
