@@ -1,0 +1,315 @@
+.contacts {
+  &__form {
+    margin-top: rem(88px);
+
+    @include lg {
+      margin-top: rem(70px);
+    }
+
+    @include md {
+      margin-top: rem(30px);
+    }
+
+    @include sm {
+      margin-top: rem(50px);
+    }
+
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      @include sm {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__input-wrap {
+    background-color: $wc;
+    padding: rem(65px) rem(40px);
+    box-shadow: 0 0 rem(15px) 0 rgba(32, 35, 42, 0.15);
+    width: 100%;
+    max-width: rem(682px);
+
+    .contacts__title {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__field-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__field {
+    flex-basis: 48%;
+    position: relative;
+    margin-bottom: rem(58px);
+    border-bottom: rem(1px) solid #979797;
+
+    @include lg {
+      margin-bottom: rem(30px);
+    }
+
+    @include xs {
+      flex-basis: 100%;
+    }
+
+    &--textarea {
+      flex-basis: 100%;
+      min-height: rem(82px);
+
+    }
+  }
+
+  &__input,
+  textarea {
+    border: none;
+    color: #979797;
+    padding-top: rem(18px);
+    padding-bottom: rem(18px);
+    padding-right: rem(10px);
+    font-size: rem(18px);
+    font-weight: 300;
+    width: 100%;
+    transition: $tr;
+    box-sizing: border-box;
+    resize: none;
+    height: 100%;
+
+    @include lg {
+      font-size: rem(16px);
+      padding-top: rem(10px);
+      padding-bottom: rem(10px);
+      padding-right: rem(10px);
+    }
+
+    @include md {
+      font-size: rem(14px);
+      padding-top: rem(8px);
+      padding-bottom: rem(8px);
+      padding-right: rem(8px);
+    }
+  }
+
+  &__input:focus {
+    padding-left: rem(10px);
+  }
+
+  &__input~.focus-border {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $mc;
+    transition: 0.4s;
+  }
+
+  &__input:focus~.focus-border {
+    width: 100%;
+    transition: 0.4s;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(50px);
+    min-height: rem(40px);
+
+    @include md {
+      margin-bottom: rem(30px);
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: rem(20px);
+      color: $bc;
+
+      @include md {
+        font-size: rem(16px);
+      }
+    }
+
+    i {
+      color: #bdbdbd;
+      font-size: rem(35px);
+
+      @include xs {
+        font-size: rem(25px);
+      }
+    }
+
+    &--info {
+      h2 {
+        color: $wc;
+      }
+    }
+  }
+
+  &__btn {
+    text-align: right;
+    display: block;
+
+    .btn {
+      background-color: $mc;
+      cursor: pointer;
+    }
+  }
+
+  &__contacts-info {
+    padding: rem(65px) rem(27px);
+    background-color: $bc;
+    width: 100%;
+    max-width: rem(457px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include lg {
+      max-width: rem(350px);
+    }
+
+    @include md {
+      max-width: rem(270px);
+    }
+
+    @include sm {
+      max-width: 100%;
+    }
+
+    .social {
+      width: 100%;
+      max-width: 100%;
+
+      @include sm {
+        margin-top: rem(30px);
+      }
+
+      li {
+        margin-right: rem(30px);
+
+        @include lg {
+          margin-right: rem(10px);
+        }
+
+        a {
+          width: rem(40px);
+          height: rem(40px);
+          color: #c1c1c1;
+          font-size: rem(20px);
+          border-radius: 100%;
+          background-color: #2e3137;
+
+          @include lg {
+            width: rem(35px);
+            height: rem(35px);
+            font-size: rem(15px);
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+
+    li,
+    a {
+      color: $wc;
+      font-size: rem(18px);
+      font-family: $stb;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @include lg {
+        font-size: rem(16px);
+      }
+
+      @include md {
+        font-size: rem(12px);
+      }
+
+
+      i {
+        margin-right: rem(10px);
+        color: $mc;
+        font-size: rem(27px);
+
+        @include lg {
+          font-size: rem(20px);
+        }
+
+        @include md {
+          font-size: rem(16px);
+        }
+      }
+
+    }
+
+    li {
+      margin-bottom: rem(43px);
+
+      @include lg {
+        margin-bottom: rem(30px);
+      }
+
+      @include md {
+        margin-bottom: rem(20px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        color: $mc;
+      }
+    }
+  }
+
+  &__contacts-info,
+  &__input-wrap {
+    box-sizing: border-box;
+
+    @include lg {
+      padding: rem(40px) rem(20px);
+    }
+
+    @include md {
+      padding: rem(25px) rem(15px);
+    }
+  }
+
+
+  .map {
+    margin-top: rem(70px);
+    width: 100%;
+    min-height: rem(700px);
+
+    @include lg {
+      margin-top: rem(50px);
+      min-height: rem(500px);
+    }
+
+    @include md {
+      margin-top: rem(30px);
+      min-height: rem(400px);
+    }
+
+    @include sm {
+      min-height: rem(300px);
+    }
+  }
+}

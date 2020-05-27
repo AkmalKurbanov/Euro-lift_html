@@ -93,6 +93,12 @@ gulp.task('js', function () {
    return gulp
       .src([
          'node_modules/jquery/dist/jquery.js',
+         'node_modules/swiper/js/swiper.min.js',
+         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+         'node_modules/inputmask/dist/jquery.inputmask.min.js',
+         'node_modules/jquery-parallax.js/parallax.min.js',
+         'node_modules/rellax/rellax.min.js',
+         'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
          'src/js/scripts/*.js'
       ])
       .pipe(sourcemaps.init())

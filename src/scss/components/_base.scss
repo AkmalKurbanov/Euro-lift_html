@@ -8,6 +8,7 @@ body {
   height: 100%;
   position: relative;
   font-family: $st;
+  // background-color: $wc;
 }
 
 a {
@@ -77,7 +78,7 @@ button {
   }
 
   @include sm {
-    max-width: rem(540px);
+    max-width: rem(640px);
   }
 
   @include xs {
@@ -97,7 +98,6 @@ button {
 
   ul {
     li {
-      width: rem(30px);
       display: inline-block;
 
       &:last-child {
@@ -105,6 +105,8 @@ button {
       }
 
       a {
+        width: rem(30px);
+        height: rem(30px);
         color: $mc;
         display: flex;
         align-items: center;
@@ -153,7 +155,7 @@ button {
 // btn
 .btn {
   display: inline-flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   padding: rem(11px) rem(30px);
   text-transform: uppercase;
@@ -163,6 +165,14 @@ button {
   transition: $tr;
   outline: none;
   background-color: $bc;
+
+  @include lg {
+    font-size: rem(15px);
+  }
+
+  @include md {
+    font-size: rem(14px);
+  }
 
   @include sm {
     padding: rem(5px) rem(10px);
@@ -217,6 +227,230 @@ button {
   &--secondery-title {
     color: $bc;
   }
+
 }
 
+// subtitle
+.subtitle {
+  margin-top: rem(55px);
+  font-size: rem(18px);
+  line-height: rem(24px);
+  color: #d8d8d8;
+  font-weight: 300;
+  width: 100%;
+  max-width: 70%;
+
+  @include md {
+    margin-top: rem(20px);
+    max-width: 100%;
+  }
+}
+
+// subtitle end
+
+
+
+// @for $i from 1 to 100 {
+//   .title span:nth-child(#{$i}) {
+//     animation-delay: $i * 0.25s;
+//   }
+// }
+
 // title end
+
+
+// breadcrumbs
+.breadcrumbs {
+  padding-top: rem(25px);
+
+  ul {
+    li {
+      color: #d8d8d8;
+      display: inline-block;
+      position: relative;
+      text-transform: uppercase;
+      font-size: rem(14px);
+      padding-right: rem(10px);
+      font-weight: 300;
+
+      &:after {
+        position: absolute;
+        content: '/';
+        right: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $wc;
+        font-size: rem(14px);
+        font-weight: 400;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+}
+
+// breadcrumbs end
+
+
+
+// pagination
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
+
+  &__prev {
+    transform: rotate(180deg);
+
+    &.disabled {
+      pointer-events: none;
+      color: #cccdcc;
+    }
+  }
+
+  .arrow {
+    &:hover {
+      i {
+        color: $mc;
+      }
+    }
+  }
+
+
+
+  &__item {
+    display: inline-block;
+    font-size: rem(24px);
+    font-weight: 300;
+
+    @include xs {
+      font-size: rem(16px);
+    }
+
+    &.is-active {
+      background-color: $mc;
+
+      a {
+        color: $wc;
+      }
+    }
+
+
+    a {
+      color: #5e5e5e;
+      width: rem(35px);
+      height: rem(35px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include xs {
+        width: rem(25px);
+        height: rem(25px);
+      }
+
+      &:hover {
+        background-color: $mc;
+        color: $wc;
+      }
+
+      &.is-collapsed {
+        background-color: transparent;
+        color: #5e5e5e;
+      }
+
+    }
+  }
+}
+
+// pagination end
+
+// line 
+.line {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: rem(70px);
+  overflow: hidden;
+  background-color: $wc;
+  z-index: 1;
+
+  @include xs {
+    display: none;
+  }
+
+  span {
+    height: rem(70px);
+    width: 100%;
+    background-color: $mc;
+    position: absolute;
+  }
+}
+
+// line end
+
+
+// moved-layer
+.moved-layer {
+  margin-top: rem(-340px);
+
+  @include lg {
+    margin-top: rem(-300px);
+  }
+
+  @include md {
+    margin-top: rem(-220px);
+  }
+}
+
+// moved-layer end
+
+// banner
+.banner {
+  min-height: rem(475px);
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  @include lg {
+    min-height: rem(400px);
+  }
+
+  @include md {
+    min-height: rem(320px);
+  }
+
+  @include xs {
+    background-attachment: scroll;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($bc, .7);
+  }
+}
+
+// banner end

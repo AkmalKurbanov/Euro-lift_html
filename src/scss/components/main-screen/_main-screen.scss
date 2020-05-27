@@ -1,12 +1,10 @@
 .main-screen {
-  height: calc(100vh - var(--headerHeight));
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  min-height: calc(100vh - var(--headerHeight));
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   .container {
     @include lg {
@@ -25,7 +23,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(#20232a, .5);
+    background-color: rgba($bc, .5);
   }
 
   .slider {
@@ -43,9 +41,15 @@
     }
 
     .swiper-slide {
-      padding-bottom: rem(45px);
+      padding-bottom: rem(75px);
 
+      @include lg {
+        padding-bottom: rem(55px);
+      }
 
+      @include md {
+        padding-bottom: rem(40px);
+      }
     }
 
     &__text {
@@ -146,6 +150,7 @@
       bottom: rem(15px);
       display: flex;
       align-items: center;
+
       @include lg {
         font-size: rem(15px);
       }
@@ -157,6 +162,7 @@
       i {
         font-size: rem(19px);
         margin-left: rem(3px);
+
         @include lg {
           font-size: rem(18px);
         }
@@ -169,6 +175,12 @@
 
       &:hover {
         color: $mc;
+      }
+    }
+
+    &.scroll-effect {
+      @include xs {
+        transform: translate(0, 0)!important;
       }
     }
   }

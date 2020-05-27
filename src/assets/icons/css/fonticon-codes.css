@@ -10,8 +10,9 @@
 .icon-mark2:before { content: '\e808'; } /* '' */
 .icon-ph:before { content: '\e809'; } /* '' */
 .icon-ph2:before { content: '\e80a'; } /* '' */
-.icon-sent:before { content: '\e80b'; } /* '' */
-.icon-tick:before { content: '\e80c'; } /* '' */
-.icon-tw:before { content: '\e80d'; } /* '' */
-.icon-users:before { content: '\e80e'; } /* '' */
-.icon-play:before { content: '\e80f'; } /* '' */
+.icon-play:before { content: '\e80b'; } /* '' */
+.icon-play-button:before { content: '\e80c'; } /* '' */
+.icon-sent:before { content: '\e80d'; } /* '' */
+.icon-tick:before { content: '\e80e'; } /* '' */
+.icon-tw:before { content: '\e80f'; } /* '' */
+.icon-users:before { content: '\e810'; } /* '' */

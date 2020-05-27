@@ -1,0 +1,353 @@
+.main {
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  .advantages {
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+
+    &__desc {
+      background-color: $bc;
+      padding: rem(62px) 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 5;
+
+      @include xs {
+        display: block;
+        background-color: rgba($bc, 0.5);
+        padding: 20px !important;
+      }
+    }
+
+    &__count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(200px);
+      background-color: #d2e6f2;
+      color: #7facd3;
+      min-height: rem(385px);
+      position: relative;
+      z-index: 9999 !important;
+
+      @include sm {
+        font-size: rem(100px);
+        min-height: rem(350px);
+      }
+
+      @include xs {
+        // position: absolute;
+        width: 100%;
+        max-width: 100%;
+        min-height: rem(200px);
+        // max-width: rem(200px);
+        font-size: rem(60px);
+      }
+
+      &--dark {
+        background-color: $bc;
+        color: #13151a;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: rem(30px);
+          background-color: $bc;
+          top: 100%;
+          z-index: -10;
+
+          @include xs {
+            display: none;
+          }
+        }
+      }
+
+      .scroll-effect {
+        position: absolute;
+        top: 100%;
+
+        @include sm {
+          top: 120%;
+        }
+
+        @include xs {
+          top: 0;
+          transform: translate(0, 0) !important;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .section {
+    &__wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    &__img1 {
+      position: relative;
+      min-height: rem(506px);
+
+      @include md {
+        min-height: rem(450px);
+      }
+
+      @include xs {
+        min-height: rem(350px);
+      }
+    }
+
+    &__img2 {
+      position: relative;
+      min-height: rem(590px);
+
+      @include md {
+        min-height: rem(500px);
+      }
+
+      @include sm {
+        min-height: rem(400px);
+      }
+
+      @include xs {
+        min-height: rem(350px);
+      }
+
+    }
+
+    &__img3 {
+      position: relative;
+      min-height: rem(380px);
+    }
+
+    .first-section-item {
+      width: 100%;
+      max-width: 60%;
+      overflow: hidden;
+
+      @include xs {
+        max-width: 100%;
+      }
+    }
+
+    .second-section-item {
+      width: 100%;
+      max-width: 40%;
+
+      @include xs {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .first-section {
+    .section__wrap {
+      @include xs {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .second-section-item {
+      @include xs {
+        position: relative;
+      }
+    }
+
+    .advantages__count {
+      @include xs {
+        position: absolute;
+        max-width: 150px;
+        min-height: 150px;
+        top: 0;
+      }
+    }
+
+    .section__img1 {
+      @include xs {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+      }
+    }
+
+    .advantages__desc {
+      @include xs {
+        display: none;
+      }
+    }
+
+    .line {
+      span {
+        width: rem(380px);
+      }
+    }
+
+    // .advantages__desc {
+    //   @include xs {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  .second-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .section__wrap {
+      @include xs {
+        flex-direction: column;
+      }
+    }
+
+    .first-section-item {
+      display: flex;
+      align-items: flex-end;
+
+      @include xs {
+        align-items: flex-start;
+      }
+    }
+
+
+    .advantages__desc {
+      height: auto;
+      padding-left: rem(60px);
+
+      @include sm {
+        padding-left: rem(20px);
+      }
+    }
+
+    .line {
+      span {
+        width: rem(250px);
+      }
+    }
+
+  }
+
+  .third-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+
+    .advantages__count {
+      @include xs {
+        max-width: rem(150px);
+        min-height: rem(150px);
+      }
+    }
+
+    .section__wrap {
+      @include xs {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .second-section-item {
+      @include xs {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .first-section-item {
+      z-index: 9999;
+    }
+  }
+
+  .sub-title {
+    font-weight: 300;
+    font-size: rem(24px);
+    color: $wc;
+    width: 100%;
+    max-width: 60%;
+    margin-top: rem(90px);
+    position: relative;
+    padding-left: rem(75px);
+
+    @include lg {
+      padding-left: rem(60px);
+      font-size: rem(21px);
+      max-width: 65%;
+      margin-top: rem(80px);
+    }
+
+    @include md {
+      margin-top: rem(70px);
+      font-size: rem(19px);
+      max-width: 70%;
+    }
+
+    @include sm {
+      margin-top: rem(50px);
+      max-width: 80%;
+      font-size: rem(16px);
+    }
+
+    @include xs {
+      padding-left: 0;
+      margin-top: rem(40px);
+      text-transform: uppercase;
+      max-width: 100%;
+      box-sizing: border-box;
+      line-height: 1.6;
+    }
+
+    ul {
+      width: rem(50px);
+      margin-right: rem(25px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include lg {
+        width: rem(40px);
+      }
+
+      @include xs {
+        position: relative;
+        margin-bottom: rem(15px);
+      }
+
+      li {
+        width: rem(10px);
+        height: rem(10px);
+        background-color: $mc;
+
+        @include lg {
+          width: rem(7px);
+          height: rem(7px);
+        }
+      }
+    }
+  }
+}

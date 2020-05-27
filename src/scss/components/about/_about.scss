@@ -1,0 +1,446 @@
+.about {
+  &__main-screen {
+    height: calc(100vh - var(--headerHeight));
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($bc, .5);
+    }
+  }
+
+  &__banner {
+    height: 100%;
+    overflow: hidden;
+
+    .container {
+      position: relative;
+      height: calc(100% - 43px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .news__title {
+    margin-top: rem(100px);
+    text-align: left;
+
+    @include lg {
+      margin-top: rem(80px);
+    }
+
+    @include md {
+      margin-top: rem(60px);
+    }
+
+    @include sm {
+      margin-top: rem(40px);
+    }
+
+    @include xs {
+      margin-top: rem(30px);
+    }
+  }
+
+  &__text-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    max-width: 60%;
+    padding: rem(90px) rem(20px) rem(90px) rem(70px);
+
+    @include lg {
+      padding: rem(60px) rem(10px) rem(60px) rem(50px);
+    }
+
+    @include md {
+      padding: rem(50px) rem(10px) rem(50px) rem(40px);
+    }
+
+    @include sm {
+      padding: rem(30px) rem(20px);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 100%;
+      top: 0;
+      bottom: 0;
+      background-color: $bc;
+      width: 100%;
+      max-width: cal(var(--wrapper) + 15px);
+
+      @include xs {
+        display: none;
+      }
+    }
+  }
+
+  .line {
+    span {
+      max-width: var(--wrapperLine);
+      display: inline-block;
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @include xs {
+      flex-direction: column;
+    }
+
+    .line {
+
+      span {
+        left: var(--wrapperLine2);
+        max-width: var(--wrapperLine2);
+      }
+    }
+  }
+
+
+  &__total-item {
+    position: relative;
+    flex-basis: 33.33%;
+    min-height: rem(400px);
+    background-color: #d2e6f2;
+    padding: rem(10px);
+    box-sizing: border-box;
+
+    @include lg {
+      min-height: rem(300px);
+    }
+
+    @include md {
+      min-height: rem(220px);
+    }
+
+    @include sm {
+      min-height: rem(170px);
+    }
+
+    &:nth-child(2n) {
+      background-color: $bc;
+
+      .about__total-count,
+      .about__total-name {
+        color: $wc;
+      }
+    }
+  }
+
+  &__item-wrap {
+    margin-top: rem(130px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__total-icon {
+    margin-bottom: rem(30px);
+
+    @include lg {
+      margin-bottom: rem(20px);
+    }
+
+    @include sm {
+      margin-bottom: rem(10px);
+    }
+
+    i {
+      color: #7facd3;
+      font-size: rem(75px);
+
+      @include lg {
+        font-size: rem(60px);
+      }
+
+      @include sm {
+        font-size: rem(50px);
+      }
+
+    }
+  }
+
+  &__total-count {
+    margin-bottom: rem(10px);
+    font-size: rem(48px);
+    font-family: $stb;
+    color: $bc;
+    font-weight: 400;
+
+    @include lg {
+      font-size: rem(40px);
+    }
+
+    @include md {
+      font-size: rem(30px);
+    }
+
+    @include sm {
+      font-size: rem(25px);
+    }
+  }
+
+  &__total-name {
+    font-size: rem(24px);
+    font-family: $stb;
+    font-weight: 400;
+    color: $bc;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include lg {
+      font-size: rem(22px);
+    }
+
+    @include md {
+      font-size: rem(18px);
+    }
+
+    @include sm {
+      font-size: rem(13px);
+      text-transform: none;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: rem(490px);
+
+    @include lg {
+      min-height: rem(400px);
+    }
+
+    @include md {
+      min-height: rem(300px);
+    }
+
+    @include sm {
+      min-height: rem(250px);
+    }
+
+    @include xs {
+      min-height: rem(150px);
+      border-bottom: rem(7px) solid $mc;
+    }
+
+    @media screen and (max-width: 400px) {
+      min-height: rem(120px);
+    }
+  }
+
+  &__video-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 55%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    outline: none;
+
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: rgba($bc, .45);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .about__video-btn {
+        width: rem(150px);
+        height: rem(150px);
+
+        // 100 80 60 35
+        @include lg {
+          width: rem(130px);
+          height: rem(130px);
+        }
+
+        @include md {
+          width: rem(110px);
+          height: rem(110px);
+        }
+
+        @include sm {
+          width: rem(90px);
+          height: rem(90px);
+        }
+
+        @include xs {
+          width: rem(65px);
+          height: rem(65px);
+        }
+      }
+    }
+  }
+
+  &__video-desc {
+    background-color: $bc;
+    max-width: 45%;
+    padding: rem(15px) var(--wrapper) rem(15px) rem(70px);
+    position: relative;
+
+    @include lg {
+      padding-left: rem(40px);
+    }
+
+    @include md {
+      padding-left: rem(30px);
+    }
+
+    @include sm {
+      padding-left: rem(20px);
+    }
+
+    @include xs {
+      padding: rem(10px);
+    }
+
+    p {
+      @include xs {
+        font-size: rem(12px) !important;
+      }
+    }
+  }
+
+  .desc {
+    background-color: $bc;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+
+    @include xs {
+      position: relative;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    &__text {
+      color: $wc;
+      font-size: rem(22px);
+      font-weight: 300;
+      line-height: rem(36px);
+
+      @include lg {
+        font-size: rem(20px);
+        line-height: rem(30px);
+      }
+
+      @include md {
+        font-size: rem(18px);
+        line-height: rem(26px);
+      }
+
+      @include sm {
+        font-size: rem(16px);
+        line-height: normal;
+      }
+    }
+  }
+
+  &__video-btn {
+    position: relative;
+    width: rem(120px);
+    height: rem(120px);
+    background-color: rgba(#d2e6f2, .18);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(10px);
+    transition: $tr;
+
+    @include lg {
+      width: rem(100px);
+      height: rem(100px);
+    }
+
+    @include md {
+      width: rem(80px);
+      height: rem(80px);
+    }
+
+    @include sm {
+      width: rem(65px);
+      height: rem(65px);
+    }
+
+    @include xs {
+      width: rem(35px);
+      height: rem(35px);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 85%;
+      height: 85%;
+      background-color: #d2e6f2;
+      border-radius: 100%;
+    }
+
+    i {
+      font-size: rem(60px);
+      width: rem(60px);
+      height: rem(60px);
+      position: relative;
+      z-index: 1;
+      color: #7facd3;
+
+      @include lg {
+        font-size: rem(45px);
+        width: rem(45px);
+        height: rem(45px);
+      }
+
+      @include md {
+        font-size: rem(40px);
+        width: rem(40px);
+        height: rem(40px);
+      }
+
+      @include sm {
+        font-size: rem(35px);
+        width: rem(35px);
+        height: rem(35px);
+      }
+
+      @include xs {
+        font-size: rem(20px);
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
+}

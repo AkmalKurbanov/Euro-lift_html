@@ -1,0 +1,86 @@
+extends layout/main/main
+block title
+  | contacts
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      .contacts
+        .contacts__banner.banner(style="background-image: url('./assets/img/contacts.jpg');")
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная'], 'новости')
+        .moved-layer  
+          .container
+            h2.title наши контакты 
+            .subtitle Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
+            .contacts__form
+              form
+                .contacts__input-wrap
+                  .contacts__title
+                      h2 Отправить сообщение
+                      i.icon-sent
+                  .contacts__field-wrap
+                    mixin input(attr)
+                      .contacts__field
+                        input( class="contacts__input" type="text" placeholder=attr name=attr required)
+                        span.focus-border
+                    +input('Имя')
+                    +input('Фамилия')
+                    +input('Телефон')
+                    +input('Email')
+                    .contacts__field.contacts__field--textarea
+                      textarea(name="Сообщение" placeholder="Сообщение" class="contacts__input")
+                      span.focus-border
+                  .contacts__btn
+                    button.btn(type="submit") ОТПРАВИТЬ
+                .contacts__contacts-info
+                  div
+                    .contacts__title.contacts__title--info
+                        h2 Контактная информация
+                    .contacts__list
+                      ul
+                        li
+                          i.icon-mark2
+                          span г.Бишкек, ул. Кулатова 1А  
+                        li
+                          a(href="tel:+996312592312")
+                            i.icon-ph2
+                            | +996 312 592 312
+                        li
+                          a(href="mailto:eurolift.kg@gmail.com")
+                            i.icon-env2
+                            | eurolift.kg@gmail.com
+                        li
+                          i.icon-clock
+                          |  09:00 - 18:00 
+                  include includes/social/social
+
+        .map#map
+  include includes/footer/footer
+
+
+  include includes/scripts 
+  script(src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js")
+  link(type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css")
+  script.
+    var L;
+    window.onload = function () {
+    L.mapquest.key = '5TB5t0zArYbHozfdlkxM2Az3bONaw56G';
+    var map = L.mapquest.map('map', {
+    center: [42.85900, 74.622314],
+    layers: L.mapquest.tileLayer('dark'),
+    zoom: 15
+    });
+    L.marker([42.858835, 74.622400], {
+    icon: L.mapquest.icons.marker({
+    primaryColor: '#22407F',
+    secondaryColor: '#3B5998',
+    shadow: true,
+    size: 'lg',
+    })
+    })
+    .bindPopup('г.Бишкек, ул. Кулатова 1А')
+    .addTo(map);
+    }

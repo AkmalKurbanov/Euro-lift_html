@@ -6,6 +6,10 @@
 
   &__item {
     flex-basis: 50%;
+
+    @include xs {
+      flex-basis: 100%;
+    }
   }
 
   &__prewiev {
@@ -36,6 +40,20 @@
       bottom: rem(30px);
       left: rem(30px);
       z-index: 1;
+
+      @include lg {
+        top: rem(20px);
+        right: rem(20px);
+        bottom: rem(20px);
+        left: rem(20px);
+      }
+
+      @include md {
+        top: rem(15px);
+        right: rem(15px);
+        bottom: rem(15px);
+        left: rem(15px);
+      }
     }
 
     &:after {
@@ -43,7 +61,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba(#20232a, .5);
+      background-color: rgba($bc, .5);
     }
   }
 
@@ -74,6 +92,21 @@
     font-size: rem(40px);
     text-align: center;
     font-weight: 400;
+
+    @include lg {
+      font-size: rem(25px);
+      margin-bottom: rem(30px);
+    }
+
+    @include md {
+      font-size: rem(20px);
+      margin-bottom: rem(25px);
+    }
+
+    @include sm {
+      font-size: rem(18px);
+      margin-bottom: rem(20px);
+    }
   }
 
   &__link {

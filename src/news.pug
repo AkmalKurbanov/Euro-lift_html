@@ -1,0 +1,39 @@
+extends layout/main/main
+block title
+  | news
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      .news
+        .news__banner.banner(style="background-image: url('./assets/img/news-main.jpg');")
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная'], 'новости')
+        .news__list.moved-layer  
+          .container
+            h2.news__title.title новости компании 
+            .news__wrap
+              mixin article(prewiev, link, date,title,excerpt)
+                .news__item
+                  .news__card.card              
+                    a(href=link).card__item
+                      img(src=prewiev alt="")
+                      .news__date=date 
+                  .news__info
+                    a(href="#").news__article-title=title 
+                    .news__article-excerpt
+                      p=excerpt 
+              +article('./assets/img/news1.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+              +article('./assets/img/news2.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+              +article('./assets/img/news3.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+              +article('./assets/img/news1.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+              +article('./assets/img/news2.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+              +article('./assets/img/news3.jpg','#','24/05/2020','Тема новости','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться...')
+        
+            include includes/pagination/pagination
+    include includes/footer/footer
+
+
+  include includes/scripts 

@@ -1,7 +1,7 @@
 .footer {
   flex: 0 0 auto;
-  background-color: #20232a;
-
+  background-color: $bc;
+  z-index: 9;
   &__wrap {
     padding: rem(65px) 0;
     display: flex;
@@ -200,7 +200,7 @@
   }
 
   &__bottom {
-    background-color: $bc;
+    background-color: #1a1d23;
     color: $wc;
     padding: rem(15px) 0;
   }
