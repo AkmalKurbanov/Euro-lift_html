@@ -2,6 +2,7 @@ extends layout/main/main
 block title
   | about
 block main
+  include includes/preloader/preloader
   .wrapper
     .content
       include includes/header/header
@@ -12,7 +13,7 @@ block main
             +breadcrumbs(['главная'], 'новости')
           .about__banner
             .container              
-              h2.news__title.title о нашей компании
+              h2.news__title.title.fade-title о нашей компании
               .about__text-wrap
                 .about__text.desc
                   p.desc__text Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.
@@ -37,7 +38,8 @@ block main
               i(class="icon-play-button")
           .about__video-desc.desc 
             p.desc__text Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-
+        .line
+          span
     include includes/footer/footer
 
 

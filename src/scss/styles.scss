@@ -7,9 +7,8 @@
 // @import "../../node_modules/--/--/";
 
 @import "../../node_modules/normalize.css/normalize.css";
-@import "../../node_modules/swiper/css/swiper.min";
+@import "../../node_modules/swiper/css/swiper.min.css";
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
-@import "../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
@@ -42,4 +41,5 @@
 @import "components/gallery/gallery";
 @import "components/news/news";
 @import "components/contacts/contacts";
-@import "components/footer";
+@import "components/preloader/preloader";
+@import "components/footer"; 

@@ -1,5 +1,4 @@
 .main {
-
   .background-image {
     position: absolute;
     top: 0;
@@ -8,8 +7,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    font-family: "object-fit: cover;";
   }
 
   .advantages {
@@ -17,6 +14,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
+    position: relative;
 
     &__desc {
       background-color: $bc;
@@ -50,18 +48,27 @@
       }
 
       @include xs {
-        // position: absolute;
         width: 100%;
-        max-width: 100%;
-        min-height: rem(200px);
-        // max-width: rem(200px);
-        font-size: rem(60px);
+        max-width: rem(100px);
+        min-height: rem(100px);
+        font-size: rem(50px);
+        position: absolute;
+        left: 15px;
+        top: 15px;
       }
 
       &--dark {
         background-color: $bc;
         color: #13151a;
         position: relative;
+
+        @include xs {
+          left: auto;
+          right: rem(15px);
+          top: rem(15px);
+          position: absolute;
+          color: $wc;
+        }
 
         &:after {
           position: absolute;
@@ -77,21 +84,6 @@
           }
         }
       }
-
-      .scroll-effect {
-        position: absolute;
-        top: 100%;
-
-        @include sm {
-          top: 120%;
-        }
-
-        @include xs {
-          top: 0;
-          transform: translate(0, 0) !important;
-          position: relative;
-        }
-      }
     }
   }
 
@@ -100,7 +92,6 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-
     }
 
     &__img1 {
@@ -156,126 +147,6 @@
       @include xs {
         max-width: 100%;
       }
-    }
-  }
-
-  .first-section {
-    .section__wrap {
-      @include xs {
-        flex-direction: column-reverse;
-      }
-    }
-
-    .second-section-item {
-      @include xs {
-        position: relative;
-      }
-    }
-
-    .advantages__count {
-      @include xs {
-        position: absolute;
-        max-width: 150px;
-        min-height: 150px;
-        top: 0;
-      }
-    }
-
-    .section__img1 {
-      @include xs {
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-      }
-    }
-
-    .advantages__desc {
-      @include xs {
-        display: none;
-      }
-    }
-
-    .line {
-      span {
-        width: rem(380px);
-      }
-    }
-
-    // .advantages__desc {
-    //   @include xs {
-    //     display: none;
-    //   }
-    // }
-  }
-
-  .second-section {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    .section__wrap {
-      @include xs {
-        flex-direction: column;
-      }
-    }
-
-    .first-section-item {
-      display: flex;
-      align-items: flex-end;
-
-      @include xs {
-        align-items: flex-start;
-      }
-    }
-
-
-    .advantages__desc {
-      height: auto;
-      padding-left: rem(60px);
-
-      @include sm {
-        padding-left: rem(20px);
-      }
-    }
-
-    .line {
-      span {
-        width: rem(250px);
-      }
-    }
-
-  }
-
-  .third-section {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    position: relative;
-
-    .advantages__count {
-      @include xs {
-        max-width: rem(150px);
-        min-height: rem(150px);
-      }
-    }
-
-    .section__wrap {
-      @include xs {
-        flex-direction: column-reverse;
-      }
-    }
-
-    .second-section-item {
-      @include xs {
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
-
-    .first-section-item {
-      z-index: 9999;
     }
   }
 
@@ -349,5 +220,161 @@
         }
       }
     }
+  }
+}
+
+
+
+
+
+.first-section {
+  .section__wrap {
+    @include xs {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .second-section-item {
+    @include xs {
+      position: relative;
+    }
+  }
+
+
+  .section__img1 {
+    @include xs {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    .advantages__desc {
+      display: none;
+
+      @include xs {
+        display: block;
+      }
+    }
+  }
+
+  .advantages__desc {
+    @include xs {
+      display: none;
+    }
+  }
+
+  .line {
+    span {
+      width: rem(380px);
+    }
+  }
+}
+
+
+
+
+.second-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  @include xs {
+    position: relative;
+  }
+
+  .section__wrap {
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  .first-section-item {
+    display: flex;
+    align-items: flex-end;
+
+    @include xs {
+      align-items: flex-start;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+
+
+  .advantages__desc {
+    height: auto;
+    padding-left: rem(60px);
+
+    @include sm {
+      padding-left: rem(20px);
+    }
+  }
+
+  .line {
+    span {
+      width: rem(250px);
+    }
+  }
+}
+
+
+
+.third-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+
+  .section__wrap {
+    @include xs {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .second-section-item {
+    @include xs {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .first-section-item {
+    z-index: 9999;
+  }
+}
+
+.curtain {
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: $tr;
+    z-index: 1;
+  }
+
+  &:before {
+    transform: translateX(-100%);
+    background-color: $mc;
+    transition-delay: .2.2s;
+  }
+
+  &:after {
+    background-color: $bc;
+    z-index: 9;
+  }
+}
+
+.load-effect {
+  transition: $tr;
+
+  &:before,
+  &:after {
+    transform: translateX(100%);
   }
 }

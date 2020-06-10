@@ -5,6 +5,9 @@
     background-repeat: no-repeat;
     position: relative;
 
+    @include xs {
+      height: auto;
+    }
 
     &:before {
       position: absolute;
@@ -146,7 +149,6 @@
   }
 
   &__item-wrap {
-    margin-top: rem(130px);
     height: 100%;
     display: flex;
     flex-direction: column;

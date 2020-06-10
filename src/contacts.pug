@@ -2,10 +2,10 @@ extends layout/main/main
 block title
   | contacts
 block main
+  include includes/preloader/preloader
   .wrapper
     .content
       include includes/header/header
-
       .contacts
         .contacts__banner.banner(style="background-image: url('./assets/img/contacts.jpg');")
           .container
@@ -13,7 +13,7 @@ block main
             +breadcrumbs(['главная'], 'новости')
         .moved-layer  
           .container
-            h2.title наши контакты 
+            h2.title.fade-title наши контакты 
             .subtitle Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
             .contacts__form
               form
@@ -22,13 +22,13 @@ block main
                       h2 Отправить сообщение
                       i.icon-sent
                   .contacts__field-wrap
-                    mixin input(attr)
+                    mixin input(attr,cl)
                       .contacts__field
-                        input( class="contacts__input" type="text" placeholder=attr name=attr required)
+                        input( class=cl type="text" placeholder=attr name=attr required).contacts__input
                         span.focus-border
                     +input('Имя')
                     +input('Фамилия')
-                    +input('Телефон')
+                    +input('Телефон','phone-js')
                     +input('Email')
                     .contacts__field.contacts__field--textarea
                       textarea(name="Сообщение" placeholder="Сообщение" class="contacts__input")
@@ -84,3 +84,4 @@ block main
     .bindPopup('г.Бишкек, ул. Кулатова 1А')
     .addTo(map);
     }
+    

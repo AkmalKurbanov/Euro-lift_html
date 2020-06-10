@@ -51,3 +51,24 @@ footer.footer
         .footer__frame  
           iframe(src="https://akmalkurbanov.github.io/copyright_Queen/white.html")  
 
+.call-back#call-back(style="display: none;")
+  .contacts__form
+    form
+      .contacts__input-wrap
+        .contacts__title
+            h2 Отправить сообщение
+            i.icon-sent
+        .contacts__field-wrap
+          mixin input(attr, cl)
+            .contacts__field
+              input(class=cl type="text" placeholder=attr name=attr required).contacts__input
+              span.focus-border
+          +input('Имя')
+          +input('Фамилия')
+          +input('Телефон', 'phone-js')
+          +input('Email')
+          .contacts__field.contacts__field--textarea
+            textarea(name="Сообщение" placeholder="Сообщение" class="contacts__input")
+            span.focus-border
+        .contacts__btn
+          button.btn(type="submit") ОТПРАВИТЬ

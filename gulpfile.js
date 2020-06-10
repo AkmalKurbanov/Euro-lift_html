@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const browsersync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 const cssmin = require('gulp-clean-css');
+const purify = require('gulp-purifycss');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
@@ -59,7 +60,7 @@ gulp.task('webpStyle', function () {
       gulp.src(['dist/includes/'])
       .pipe(clean()),
       gulp.src(['dist/layout/'])
-      .pipe(clean());
+      .pipe(clean())
 });
 
 
@@ -97,8 +98,6 @@ gulp.task('js', function () {
          'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
          'node_modules/inputmask/dist/jquery.inputmask.min.js',
          'node_modules/jquery-parallax.js/parallax.min.js',
-         'node_modules/rellax/rellax.min.js',
-         'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
          'src/js/scripts/*.js'
       ])
       .pipe(sourcemaps.init())
@@ -177,6 +176,13 @@ gulp.task('assets', function () {
       .pipe(gulp.dest('./dist/assets/'));
 });
 
+
+gulp.task('purify', function () {
+   return gulp.src('dist/assets/**/*.css')
+      .pipe(purify(['dist/**/*.js', 'dist/**/*.html']))
+      .pipe(gulp.dest('./dist/assets/'));
+});
+
 gulp.task('watch', function () {
    gulp.watch('src/scss/**/*.scss', gulp.parallel('scss'));
    gulp.watch('src/assets/**/*.*', gulp.parallel('assets'));
@@ -184,8 +190,9 @@ gulp.task('watch', function () {
    gulp.watch('src/js/**/*.js', gulp.parallel('js'));
    gulp.watch('src/assets/**/*.json');
    gulp.watch('src/**/*.pug', gulp.parallel('html'))
+   gulp.watch('dist/assets/**/*.html', gulp.parallel('purify'))
 });
 
-gulp.task('build', gulp.series('clean', 'scss', 'html', 'js', 'images', 'fonts', 'webpStyle', 'assets'));
+gulp.task('build', gulp.series('clean', 'scss', 'html', 'js', 'images', 'fonts', 'webpStyle', 'assets', 'purify'));
 
 gulp.task('default', gulp.parallel('watch', 'scss', 'browser-sync', 'html', 'js', 'assets'));

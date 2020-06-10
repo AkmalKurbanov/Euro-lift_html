@@ -2,6 +2,7 @@ extends layout/main/main
 block title
   | news detail
 block main
+  include includes/preloader/preloader
   .wrapper
     .content
       include includes/header/header
@@ -14,7 +15,7 @@ block main
             +breadcrumbs(['главная'], 'новости')
         .news__list.moved-layer  
           .container
-            h2.news__title.title новости компании 
+            h2.news__title.title.fade-title новости компании 
             .news__wrap
               .news__detail-img
                 img(src="./assets/img/news2.jpg", alt="")

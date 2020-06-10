@@ -2,13 +2,15 @@ extends layout/main/main
 block title
   | main
 block main
+  include includes/preloader/preloader
   .wrapper
     .content
       include includes/header/header
       .main
+      
         section.main-screen.parallax-window(data-parallax="scroll" data-speed="0.3"  data-image-src="./assets/img/main1.jpg")
           .container
-            .main-screen__slider.slider.scroll-effect(data-rellax-speed="-3.5")
+            .main-screen__slider.slider
               .swiper-container
                   .swiper-wrapper
                     mixin slide(title,text,link)
@@ -29,16 +31,16 @@ block main
             .first-section-item
               .section__img1
                 .advantages__desc.left-desc
-                  h2.title высокая эффективность
+                  h2.title.fade-title высокая эффективность
                   .sub-title
                     ul
                       li
                       li
                       li
                     p Высокая эффективность и снижение выбросов углекислого газа
-                .background-image.parallax-window(data-parallax="scroll" data-speed="0.8"  data-image-src="./assets/img/main2.jpg" data-bleed="20")
+                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.5"  data-image-src="./assets/img/main2.jpg" data-bleed="20")
               .advantages__desc.left-desc
-                h2.title высокая эффективность
+                h2.title.fade-title высокая эффективность
                 .sub-title
                   ul
                     li
@@ -47,9 +49,13 @@ block main
                   p Высокая эффективность и снижение выбросов углекислого газа
             .second-section-item
               .advantages__count
-                span.scroll-effect(data-rellax-speed="4.4") 01
+                <div class="wrap">
+                <div class="parallaxMiddle"></div>
+                </div>
+                span 01
               .section__img2
-                .background-image.parallax-window(data-parallax="scroll" data-speed="0.8"  data-image-src="./assets/img/main3.jpg")
+                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.6"  data-image-src="./assets/img/main3.jpg")
+                  
           .line
               span
     
@@ -57,14 +63,19 @@ block main
           .section__wrap
             .second-section-item
               .advantages__count.advantages__count--dark
-                span.scroll-effect(data-rellax-speed="2") 02
+                <div class="wrap">
+                <div class="parallaxTop"></div>
+                <div class="parallaxMiddle"></div>
+                <div class="parallaxBottom"></div>
+                </div>
+                span 02
               .section__img3
-                .background-image.parallax-window(data-parallax="scroll" data-speed="0.6" data-image-src="./assets/img/main1.jpg" data-z-index="1" data-bleed="20")
+                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.3" data-image-src="./assets/img/main1.jpg" data-z-index="1" data-bleed="20")
               .line
                 span    
             .first-section-item
               .advantages__desc
-                h2.title полный Комфорт
+                h2.title.fade-title полный Комфорт
                 .sub-title
                   ul
                     li
@@ -72,11 +83,11 @@ block main
                     li
                   p Высокий уровень комфорта поездки
 
-        section.advantages.third-section.section.parallax-window(data-parallax="scroll" data-speed="0.7"  data-image-src="./assets/img/main6.jpg" data-bleed="20" data-z-index="1")
+        section.advantages.third-section.section.parallax-window.curtain(data-parallax="scroll" data-speed="0.7"  data-image-src="./assets/img/main6.jpg" data-bleed="20" data-z-index="1")
           .section__wrap
             .first-section-item
               .advantages__desc.left-desc
-                h2.title стильный дизайн
+                h2.title.fade-title стильный дизайн
                 .sub-title
                   ul
                     li
@@ -85,12 +96,13 @@ block main
                   p Дизайн удостоенный наград украсит ваше здание  
             .second-section-item
               .advantages__count
-                span.scroll-effect(data-rellax-speed="1.15") 03
+                span 03
 
-        .line()
+        .line
           span
-
-
+  
+  
+      
   
      
 
@@ -101,3 +113,8 @@ block main
   script.
     var leftDesc = $('.container').offset().left;
     $('.left-desc').css('padding-left',leftDesc)
+
+
+
+
+  

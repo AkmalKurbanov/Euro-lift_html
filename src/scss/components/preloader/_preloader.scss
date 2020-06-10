@@ -1,0 +1,116 @@
+.preloader,
+.preloader__first-layer,
+.preloader__second-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  transition: all 1s;
+}
+
+.preloader {
+  background-color: $wc;
+  overflow: hidden;
+
+  &__first-layer {
+    background-color: $mc;
+    transform: translateX(100%);
+    transition-delay: 1s;
+  }
+
+  &__second-layer {
+    background-color: $bc;
+    transform: translateX(100%);
+    transition-delay: 1.2s;
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    background: $bc;
+    color: #fff;
+    mix-blend-mode: multiply;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $mc;
+      z-index: -1;
+    }
+  }
+
+  &__gate {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    background-color: #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-size: rem(60px);
+    transition: all 1s;
+    transition-delay: 2.5s;
+    transform: translateX(-100%);
+
+    &:last-child {
+      right: 0;
+      justify-content: flex-start;
+      transform: translateX(100%);
+    }
+  }
+
+  &__img {
+    max-width: rem(150px);
+    width: 100%;
+
+    @include xs {
+      max-width: rem(120px);
+    }
+
+    &:first-child {
+      padding-right: rem(3px);
+    }
+  }
+
+  &.loaded {
+
+    .preloader__first-layer,
+    .preloader__second-layer {
+      transform: translateX(-100%);
+    }
+
+    .preloader__gate {
+      transform: translateX(0);
+
+      &:last-child {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.gate {
+    transition-delay: 3s;
+    background-color: transparent;
+
+    .preloader__gate {
+      transform: translateX(-100%);
+      padding-right: rem(20px);
+
+      &:last-child {
+        transform: translateX(100%);
+        padding-right: 0;
+        padding-left: rem(20px);
+      }
+    }
+  }
+}

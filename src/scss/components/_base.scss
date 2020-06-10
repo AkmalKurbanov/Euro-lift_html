@@ -207,30 +207,57 @@ button {
   font-weight: 400;
   color: $wc;
   text-transform: uppercase;
-
+  white-space: nowrap;
+  min-height: rem(50px);
+  
   @include lg {
     font-size: rem(30px);
+    min-height: rem(40px);
   }
-
+  
   @include md {
     font-size: rem(25px);
+    min-height: rem(35px);
   }
-
+  
   @include sm {
     font-size: rem(20px);
+    min-height: rem(35px);
   }
-
+  
   @include xs {
     font-size: rem(18px);
+    min-height: rem(30px);
   }
 
   &--secondery-title {
     color: $bc;
   }
 
+  span {
+    transition: $tr;
+    margin-left: rem(20px);
+    position: absolute;
+    opacity: 0;
+
+    &.split-text {
+      position: relative;
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
 }
 
+@for $i from 1 to 100 {
+  .title span:nth-child(#{$i}) {
+    transition-delay: $i * 0.05s;
+  }
+}
+
+// title end
+
 // subtitle
+
 .subtitle {
   margin-top: rem(55px);
   font-size: rem(18px);
@@ -250,13 +277,6 @@ button {
 
 
 
-// @for $i from 1 to 100 {
-//   .title span:nth-child(#{$i}) {
-//     animation-delay: $i * 0.25s;
-//   }
-// }
-
-// title end
 
 
 // breadcrumbs
@@ -454,3 +474,18 @@ button {
 }
 
 // banner end
+
+
+
+
+// modal window
+.call-back {
+  background-color: transparent;
+  padding: rem(10px);
+
+  .contacts__form {
+    margin: 0;
+  }
+}
+
+// modal window end

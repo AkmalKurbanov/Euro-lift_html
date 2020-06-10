@@ -19,19 +19,6 @@ $(window).scroll(function () {
 });
 
 
-
-// $('.title').each(function (index) {
-//   var characters = $(this).text().split("");
-
-//   $this = $(this);
-//   $this.empty();
-//   $.each(characters, function (i, el) {
-//     $this.append("<span>" + el + "</span");
-//   });
-
-// });
-
-
 if ($(window).width() > 575) {
   const cards = document.querySelectorAll('.card');
 
@@ -70,19 +57,48 @@ if ($(window).width() > 575) {
 
 
 
-var rellax = new Rellax('.scroll-effect');
+$('.parallax-window').parallax({
+  overScrollFix: true,
+  androidFix: true,
+});
 
-$(window).resize(function () {
 
-  if ($('header').width() == 320) {
 
-    $('.section').removeClass('parallax-window')
+var windowHeight = $(window).height();
 
-  }
+$(document).on('scroll', function () {
+  $('.curtain').each(function () {
+    var self = $(this),
+      height = self.offset().top + self.height() / 2;
+    if ($(document).scrollTop() + windowHeight >= height) {
+      self.addClass('load-effect')
+    }
+  });
+
+
+  $('.fade-title span').each(function () {
+    var self = $(this),
+      height = self.offset().top + self.height() / 2;
+    if ($(document).scrollTop() + windowHeight >= height) {
+      self.addClass('split-text')
+    }
+  });
 
 });
 
-$('.parallax-window').parallax({
-  overScrollFix: true,
-  androidFix: true
+
+$('.fade-title').each(function (index) {
+  var characters = $(this).text().split("");
+
+  $this = $(this);
+  $this.empty();
+  $.each(characters, function (i, el) {
+    $this.append("<span>" + el + "</span");
+  });
+});
+
+
+
+$(".phone-js").inputmask({
+  "mask": "0 (999) 999-999"
 });
