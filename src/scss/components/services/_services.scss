@@ -165,4 +165,33 @@
       }
     }
   }
+
+  &__link {
+    color: $mc;
+    margin-top: rem(40px);
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    padding-right: rem(20px);
+
+    &:after {
+      position: absolute;
+      content: '';
+      font-family: 'fonticon';
+      opacity: 0;
+      transition: $tr;
+      font-size: rem(13px);
+      top: 50%;
+      transform: translate(-50% ,-50%);
+    }
+    
+    &:hover {
+      right: 0;
+      &:after {
+        transform: translate(10px ,-50%);
+        opacity: 1;
+      }
+    }
+  }
+
 }
