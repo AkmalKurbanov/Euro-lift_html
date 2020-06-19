@@ -1,0 +1,168 @@
+.services {
+  &__banner {
+    min-height: rem(360px);
+    position: relative;
+
+    @include md {
+      min-height: rem(300px);
+    }
+
+    @include sm {
+      min-height: rem(250px);
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: rgba($bc, .58);
+      width: 100%;
+      height: 100%;
+    }
+
+    .title {
+      margin-top: rem(100px);
+
+      @include md {
+        margin-top: rem(85px);
+      }
+
+      @include sm {
+        margin-top: rem(75px);
+      }
+    }
+  }
+
+  &__block {
+    .line {
+      span {
+        width: 65%;
+      }
+    }
+
+    &:nth-child(2n) {
+      .services__wrap {
+        flex-direction: row-reverse;
+
+        @include xs {
+          flex-direction: column;
+        }
+      }
+
+      .line {
+        span {
+          right: 0;
+        }
+      }
+    }
+
+    @include xs {
+      border-bottom: rem(10px) solid $mc;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:first-child {
+      width: 100%;
+      max-width: 35%;
+      background-color: #d2e6f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include xs {
+        max-width: 100% !important;
+      }
+    }
+
+    &:last-child {
+      background-color: $mc;
+      width: 100%;
+      max-width: 65%;
+
+      @include xs {
+        max-width: 100% !important;
+      }
+    }
+
+
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    max-width: rem(190px);
+    padding: rem(15px);
+
+    @include xs {
+      max-width: rem(150px);
+    }
+  }
+
+  &__desc {
+
+    background-color: #20232a;
+    box-sizing: border-box;
+    padding-top: rem(70px);
+    padding-bottom: rem(70px);
+    padding-left: rem(70px);
+    min-height: rem(500px);
+
+    @include sm {
+      padding-top: rem(30px);
+      padding-bottom: rem(30px);
+      padding-left: rem(30px);
+      min-height: rem(350px);
+    }
+
+    @include xs {
+      min-height: rem(300px);
+      text-align: center;
+      padding: rem(20px) rem(10px) !important;
+
+      * {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__detail {
+    .subtitle {
+      p {
+        margin-bottom: rem(15px);
+      }
+    }
+
+    .line {
+      width: 35%;
+      height: rem(140px);
+
+      span {
+        width: 50%;
+
+        &:first-child {
+          left: 0;
+        }
+
+        &:last-child {
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

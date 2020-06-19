@@ -1,0 +1,40 @@
+extends layout/main/main
+block title
+  | services
+block main
+  //- include includes/preloader/preloader
+  .wrapper
+    .content
+      include includes/header/header
+
+      .services
+        .services__banner(style="background-image: url('./assets/img/services.jpg')")
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная'], 'новости')
+            
+            h2.title.fade-title  Услуги нашей компании
+        mixin services(image, title, desc, modificator)  
+          .services__block
+            .services__wrap(class=modificator)
+              .services__item.curtain                 
+                .services__img
+                  img(src=image, alt="")
+              .services__item
+                .services__desc
+                  h2.title.fade-title=title
+                  .subtitle
+                    p=desc
+            .line
+              span
+        +services('./assets/img/ser1.png','продажа оборудования','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.')
+        +services('./assets/img/ser2.png','монтаж','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.')
+        +services('./assets/img/ser3.png','обслуживание','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.')
+        +services('./assets/img/ser4.png','модернизация','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.')
+        +services('./assets/img/ser5.png','ремонт','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.')
+
+
+  include includes/scripts 
+  script.
+    var leftDesc = $('.container').offset().left;
+    $('.left-desc').css('padding-left',leftDesc)

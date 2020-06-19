@@ -359,9 +359,10 @@
   }
 
   &:before {
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
     background-color: $mc;
-    transition-delay: .2.2s;
+    // transition-delay: .2.2s;
+    transition-delay: .3s;
   }
 
   &:after {
@@ -370,11 +371,3 @@
   }
 }
 
-.load-effect {
-  transition: $tr;
-
-  &:before,
-  &:after {
-    transform: translateX(100%);
-  }
-}
