@@ -104,3 +104,4 @@ $(".phone-js").inputmask({
 });
 
 
+$('.services__block:even').find('.services__desc').addClass('left-desc');
