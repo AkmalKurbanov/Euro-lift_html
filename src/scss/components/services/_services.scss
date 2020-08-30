@@ -182,16 +182,170 @@
       transition: $tr;
       font-size: rem(13px);
       top: 50%;
-      transform: translate(-50% ,-50%);
+      transform: translate(-50%, -50%);
     }
-    
+
     &:hover {
       right: 0;
+
       &:after {
-        transform: translate(10px ,-50%);
+        transform: translate(10px, -50%);
         opacity: 1;
       }
     }
   }
 
+  &__item-wrap {
+    margin: rem(70px) 0 rem(30px);
+
+    ol {
+      display: flex;
+      flex-direction: row;
+      counter-reset: item;
+
+      li {
+        flex-basis: 20%;
+        border: rem(1px) solid $wc;
+        border-top: none;
+        color: $wc;
+        text-align: center;
+        text-transform: uppercase;
+        padding: rem(50px) rem(15px) rem(10px);
+        line-height: rem(20px);
+        position: relative;
+        list-style-type: none;
+
+        @include lg {
+          font-size: rem(12px);
+          line-height: rem(16px);
+          padding: rem(42px) rem(10px) rem(10px);
+        }
+
+        @include md {
+          font-size: rem(10px);
+          line-height: rem(14px);
+          padding: rem(35px) rem(8px) rem(10px);
+          font-weight: 300;
+        }
+
+        @include sm {
+          text-transform: none;
+          font-size: rem(9px);
+          line-height: rem(13px);
+          padding: rem(30px) rem(5px) rem(10px);
+          font-weight: 300;
+        }
+
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';
+          height: rem(1px);
+          width: calc(100% - 151px);
+          background-color: $wc;
+          top: 0;
+
+          @include lg {
+            width: calc(100% - 124px);
+          }
+
+          @include md {
+            width: calc(100% - 95px);
+          }
+
+          @include sm {
+            width: calc(100% - 75px);
+          }
+        }
+
+        &:before {
+          left: 0;
+        }
+
+        &:after {
+          right: 0;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          max-width: rem(76px);
+          width: 100%;
+          height: rem(76px);
+          border: solid rem(2px) $wc;
+          border-radius: 100%;
+          top: rem(-39px);
+          left: 50%;
+          transform: translateX(-50%);
+
+          @include lg {
+            max-width: rem(60px);
+            height: rem(60px);
+            top: rem(-31px);
+          }
+
+          @include md {
+            max-width: rem(50px);
+            height: rem(50px);
+            top: rem(-25px);
+          }
+
+          @include sm {
+            max-width: rem(40px);
+            height: rem(40px);
+            top: rem(-20px);
+          }
+
+          &:before {
+            position: absolute;
+            content: '';
+            max-width: rem(60px);
+            width: 100%;
+            height: rem(60px);
+            border-radius: 100%;
+            background-color: #ffffff;
+
+            @include lg {
+              max-width: rem(50px);
+              height: rem(50px);
+            }
+
+            @include md {
+              max-width: rem(40px);
+              height: rem(40px);
+            }
+
+            @include sm {
+              max-width: rem(30px);
+              height: rem(30px);
+            }
+          }
+
+          &:after {
+            position: absolute;
+            content: counter(item) " ";
+            counter-increment: item;
+            font-size: rem(30px);
+            color: $mc;
+
+            @include lg {
+              font-size: rem(25px);
+            }
+
+            @include md {
+              font-size: rem(20px);
+            }
+
+            @include sm {
+              font-size: rem(15px);
+            }
+          }
+
+        }
+      }
+    }
+  }
 }

@@ -18,172 +18,75 @@
     }
   }
 
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba($bc, .5);
+
+
+  &__title-wrap {
+    max-width: rem(910px);
+    margin: auto;
+    position: relative;
+    z-index: 1;
   }
 
-  .slider {
-    background-color: #fff;
-    background-color: rgba($wc, .59);
-    padding: rem(45px) rem(45px) 0;
-    position: relative;
+  &__title {
+    font-size: rem(48px);
+    line-height: rem(60px);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $wc;
+    text-align: center;
+    margin-bottom: rem(38px);
 
     @include lg {
-      padding: rem(35px) rem(35px) 0;
+      font-size: rem(40px);
+      line-height: rem(48px);
+      margin-bottom: rem(30px);
     }
 
     @include md {
-      padding: rem(30px) rem(30px) 0;
+      font-size: rem(35px);
+      line-height: rem(43px);
+      margin-bottom: rem(25px);
     }
 
-    .swiper-slide {
-      padding-bottom: rem(75px);
-
-      @include lg {
-        padding-bottom: rem(55px);
-      }
-
-      @include md {
-        padding-bottom: rem(40px);
-      }
+    @include sm {
+      font-size: rem(30px);
+      line-height: rem(38px);
+      margin-bottom: rem(20px);
     }
 
-    &__text {
-      font-weight: 300;
-      font-size: rem(20px);
-      color: #383838;
-      margin-top: rem(15px);
+    @include xs {
+      font-size: rem(25px);
+      line-height: rem(35px);
+      margin-bottom: rem(15px);
+    }
+  }
 
-      @include lg {
-        font-size: rem(19px);
-        margin-top: rem(13px);
-      }
+  &__sub-title {
+    font-size: rem(20px);
+    line-height: rem(24px);
+    text-align: center;
+    color: $wc;
+    font-weight: 400;
 
-      @include md {
-        font-size: rem(18px);
-        margin-top: rem(11px);
-      }
-
-      @include sm {
-        font-size: rem(17px);
-        margin-top: rem(9px);
-      }
-
-      @include xs {
-        font-size: rem(16px);
-        margin-top: rem(7px);
-      }
+    @include lg {
+      font-size: rem(18px);
+      line-height: rem(22px);
     }
 
-    .navigation {
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      left: 0;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-
-      .slider-button {
-        width: rem(45px);
-        height: rem(45px);
-        background-color: $bc;
-        color: $wc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: $tr;
-        outline: none;
-
-        @include lg {
-          width: rem(35px);
-          height: rem(35px);
-          font-size: rem(14px);
-        }
-
-        @include md {
-          width: rem(30px);
-          height: rem(30px);
-          font-size: rem(13px);
-        }
-
-        @include xs {
-          width: rem(20px);
-          height: rem(20px);
-          font-size: rem(10px);
-        }
-
-        &:hover {
-          background-color: $mc;
-        }
-
-        &:first-child {
-          transform: rotate(180deg) translateX(50%);
-
-          @include xs {
-            transform: rotate(180deg) translateX(0);
-          }
-        }
-
-        &:last-child {
-          transform: translateX(50%);
-
-          @include xs {
-            transform: translateX(0);
-          }
-        }
-      }
+    @include md {
+      font-size: rem(16px);
+      line-height: rem(20px);
     }
 
-    &__more {
-      color: $bc;
-      text-transform: uppercase;
-      font-family: $stb;
-      position: absolute;
-      right: 0;
-      bottom: rem(15px);
-      display: flex;
-      align-items: center;
-
-      @include lg {
-        font-size: rem(15px);
-      }
-
-      @include md {
-        font-size: rem(13px);
-      }
-
-      i {
-        font-size: rem(19px);
-        margin-left: rem(3px);
-
-        @include lg {
-          font-size: rem(18px);
-        }
-
-        @include md {
-          font-size: rem(16px);
-        }
-
-      }
-
-      &:hover {
-        color: $mc;
-      }
+    @include sm {
+      font-size: rem(15px);
+      line-height: rem(19px);
     }
 
-    &.scroll-effect {
-      @include xs {
-        transform: translate(0, 0) !important;
-      }
+    @include xs {
+      font-size: rem(14px);
+      line-height: rem(18px);
     }
   }
 }
+

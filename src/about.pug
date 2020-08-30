@@ -19,19 +19,6 @@ block main
                   p.desc__text Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.
         .line
           span
-        .about__total
-          mixin total(icon, count, name)
-            .about__total-item
-              .about__item-wrap
-                .about__total-icon
-                  i(class=icon)
-                .about__total-count=count
-                .about__total-name=name
-          +total('icon-tick', 45, 'установленных лифта')    
-          +total('icon-users', 891, 'довольных клиентов')    
-          +total('icon-house', 45, 'завершенных проекта')    
-          .line
-            span
         .about__video    
           a( class="about__video-wrap" data-fancybox href="https://youtu.be/6OSwHQG57Bk" style="background-image: url('./assets/img/video-prewiev.jpg')")
             .about__video-btn

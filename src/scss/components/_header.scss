@@ -23,85 +23,8 @@
 }
 
 .header {
-  &__contacts {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__top {
-    padding: rem(17px) 0;
-    box-sizing: border-box;
-
-    @include md {
-      padding: rem(10px) 0;
-    }
-
-    @include xs {
-      display: none;
-    }
-  }
-
-  &__contacts-item {
-    @include xs {
-      display: none;
-    }
-
-    ul {
-      li {
-        display: inline-block;
-        font-family: $stb;
-        margin-right: rem(25px);
-
-        @include lg {
-          margin-right: rem(15px);
-        }
-
-        @include md {
-          margin-right: rem(5px);
-        }
-
-        &:last-child {
-          margin-right: 0;
-
-          @include sm {
-            margin-top: rem(10px);
-          }
-        }
-
-        * {
-          color: $bc;
-          font-size: rem(18px);
-
-          @include lg {
-            font-size: rem(15px);
-          }
-
-          @include md {
-            font-size: rem(13px);
-          }
-        }
-
-        a {
-          &:hover {
-            color: $mc;
-          }
-        }
-
-        i {
-          color: $mc;
-          margin-right: rem(8px);
-
-          @include lg {
-            margin-right: rem(5px);
-          }
-        }
-      }
-    }
-  }
-
   &__main {
-    background-color: $bc;
+    background-color: $wc;
     padding: rem(20px) 0;
   }
 

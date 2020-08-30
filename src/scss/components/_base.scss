@@ -164,7 +164,7 @@ button {
   box-sizing: border-box;
   transition: $tr;
   outline: none;
-  background-color: $bc;
+  background-color: $mc;
 
   @include lg {
     font-size: rem(15px);
@@ -179,19 +179,22 @@ button {
   }
 
   &:hover {
-    background-color: $mc;
+    background-color: $bc;
   }
 
   &--cb {
-    border: rem(1px) solid $wc;
+    border: rem(1px) solid $mc;
     font-size: rem(18px);
+    background-color: transparent;
+    color: $mc;
 
     @include sm {
       font-size: rem(13px);
     }
 
     &:hover {
-      border: rem(1px) solid $mc;
+      color: $wc;
+      background-color: $mc;
     }
 
   }
@@ -209,22 +212,22 @@ button {
   text-transform: uppercase;
   white-space: nowrap;
   min-height: rem(50px);
-  
+
   @include lg {
     font-size: rem(30px);
     min-height: rem(40px);
   }
-  
+
   @include md {
     font-size: rem(25px);
     min-height: rem(35px);
   }
-  
+
   @include sm {
     font-size: rem(20px);
     min-height: rem(35px);
   }
-  
+
   @include xs {
     font-size: rem(18px);
     min-height: rem(30px);
@@ -254,7 +257,131 @@ button {
   }
 }
 
+.title-main-wrap {
+  max-width: rem(910px);
+  width: 100%;
+  margin: auto;
+
+  .title-main {
+    font-size: rem(40px);
+    line-height: rem(60px);
+    text-align: center;
+    font-weight: 400;
+    color: $bc;
+    position: relative;
+    margin-bottom: rem(42px);
+    padding-bottom: rem(10px);
+
+    @include lg {
+      font-size: rem(35px);
+      line-height: rem(55px);
+      margin-bottom: rem(30px);
+      padding-bottom: rem(10px);
+    }
+
+    @include md {
+      font-size: rem(35px);
+      line-height: rem(55px);
+      margin-bottom: rem(30px);
+      padding-bottom: rem(10px);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      max-width: rem(100px);
+      width: 100%;
+      height: rem(5px);
+      background-color: #e8e8e8;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__short-desc {
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      color: #3b4245;
+      font-weight: 400;
+      margin-bottom: rem(40px);
+
+      @include lg {
+        font-size: rem(18px);
+        line-height: rem(22px);
+      }
+
+      @include md {
+        font-size: rem(16px);
+        line-height: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(15px);
+        line-height: rem(19px);
+      }
+
+      @include xs {
+        font-size: rem(14px);
+        line-height: rem(18px);
+      }
+    }
+  }
+
+  &_lighter-tile {
+
+    .title-main,
+    .title-main__short-desc {
+      color: $wc;
+    }
+
+    .title-main {
+      &:after {
+        background-color: $wc;
+      }
+    }
+  }
+}
+
 // title end
+
+// section on main
+.indent {
+  padding: rem(85px) 0 rem(50px);
+
+  @include lg {
+    padding: rem(50px) 0 rem(45px);
+  }
+
+  @include md {
+    padding: rem(45px) 0 rem(40px);
+  }
+
+  @include sm {
+    padding: rem(40px) 0 rem(35px);
+  }
+
+  @include xs {
+    padding: rem(35px) 0 rem(30px);
+  }
+}
+
+.parallax-window {
+  position: relative;
+  text-align: center;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($bc, .5);
+  }
+}
+
+// section on main end
 
 // subtitle
 

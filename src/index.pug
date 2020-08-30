@@ -2,7 +2,7 @@ extends layout/main/main
 block title
   | main
 block main
-  include includes/preloader/preloader
+  //- include includes/preloader/preloader
   .wrapper
     .content
       include includes/header/header
@@ -10,102 +10,52 @@ block main
       
         section.main-screen.parallax-window(data-parallax="scroll" data-speed="0.3"  data-image-src="./assets/img/main1.jpg")
           .container
-            .main-screen__slider.slider
-              .swiper-container
-                  .swiper-wrapper
-                    mixin slide(title,text,link)
-                      .swiper-slide
-                        .slider__title.title.title--secondery-title=title 
-                        .slider__text=text 
-                        a(href=link class="slider__more") Подробнее 
-                          i.icon-play
-                    +slide('ПАССАЖИРСКИЕ КОНВЕЙЕРЫ', 'Наши пасажирские конвейеры устанавливают стандарты в дизайне,  энергоэффективности, безопасноти и энергносбережении.', '#')
-              .navigation    
-                .prev.slider-button
-                  i.icon-angle
-                .next.slider-button
-                  i.icon-angle
-
-        section.advantages.first-section.section
-          .section__wrap
-            .first-section-item
-              .section__img1
-                .advantages__desc.left-desc
-                  h2.title.fade-title высокая эффективность
-                  .sub-title
-                    ul
-                      li
-                      li
-                      li
-                    p Высокая эффективность и снижение выбросов углекислого газа
-                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.5"  data-image-src="./assets/img/main2.jpg" data-bleed="20")
-              .advantages__desc.left-desc
-                h2.title.fade-title высокая эффективность
-                .sub-title
-                  ul
-                    li
-                    li
-                    li
-                  p Высокая эффективность и снижение выбросов углекислого газа
-            .second-section-item
-              .advantages__count
-                <div class="wrap">
-                <div class="parallaxMiddle"></div>
-                </div>
-                span 01
-              .section__img2
-                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.6"  data-image-src="./assets/img/main3.jpg")
-                  
-          .line
-              span
-    
-        section.advantages.second-section.section.parallax-window(data-parallax="scroll" data-speed="0.2"  data-image-src="./assets/img/main4.jpg" data-bleed="20")
-          .section__wrap
-            .second-section-item
-              .advantages__count.advantages__count--dark
-                <div class="wrap">
-                <div class="parallaxTop"></div>
-                <div class="parallaxMiddle"></div>
-                <div class="parallaxBottom"></div>
-                </div>
-                span 02
-              .section__img3
-                .background-image.parallax-window.curtain(data-parallax="scroll" data-speed="0.3" data-image-src="./assets/img/main1.jpg" data-z-index="1" data-bleed="20")
-              .line
-                span    
-            .first-section-item
-              .advantages__desc
-                h2.title.fade-title полный Комфорт
-                .sub-title
-                  ul
-                    li
-                    li
-                    li
-                  p Высокий уровень комфорта поездки
-
-        section.advantages.third-section.section.parallax-window.curtain(data-parallax="scroll" data-speed="0.7"  data-image-src="./assets/img/main6.jpg" data-bleed="20" data-z-index="1")
-          .section__wrap
-            .first-section-item
-              .advantages__desc.left-desc
-                h2.title.fade-title стильный дизайн
-                .sub-title
-                  ul
-                    li
-                    li
-                    li
-                  p Дизайн удостоенный наград украсит ваше здание  
-            .second-section-item
-              .advantages__count
-                span 03
-
-        .line
-          span
-  
-  
-      
-  
-     
-
+            .main-screen__title-wrap
+              h2.main-screen__title УЛУЧШЕНИЕ ТЕЧЕНИЯ <br> ГОРОДСКОЙ ЖИЗНИ
+              p.main-screen__sub-title Мы поставляем ведущие в отрасли лифты, эскалаторы, пассажирские конвейеры, автоматические и промышленные двери,погрузочные платформы, а также инновационные решения по доступу для технического обслуживания и модернизации.  
+        section.about.indent
+          .container
+            .title-main-wrap
+              h2.title-main Кто мы?
+              p.title-main__short-desc Мы представляем KONE в качестве дистрибьютора. Мы занимаемся продажей, установкой, техническим обслуживанием и модернизацией лифтов, эскалаторов и автоматических дверей KONE.
+            .about__more-wrap 
+              a(href="#") подробнее
+                 i.icon-angle
+        section.about__total
+          mixin total(icon, count, name)
+            .about__total-item
+              .about__item-wrap
+                .about__total-icon
+                  i(class=icon)
+                .about__total-count=count
+                .about__total-name=name
+          +total('icon-tick', 45, 'установленных лифта')    
+          +total('icon-users', 891, 'довольных клиентов')    
+          +total('icon-house', 45, 'завершенных проекта')
+        section.services.indent.parallax-window(data-parallax="scroll" data-speed="0.3"  data-image-src="./assets/img/main1.jpg")  
+          .container  
+            .title-main-wrap.title-main-wrap_lighter-tile
+              h2.title-main Наши услуги
+              p.title-main__short-desc Компания KONE предлагает передовые решения в отрасли: экоэффективные лифты, эскалаторы, пассажирские конвейеры и автоматические двери. Узнайте больше о наших продуктах ниже:
+            .services__item-wrap
+              ol
+                mixin serciceItem(item)
+                  li=item
+                    span
+                +serciceItem('продажа оборудования')  
+                +serciceItem('монтаж')  
+                +serciceItem('обслуживание')  
+                +serciceItem('модернизация')  
+                +serciceItem('ремонт')  
+            a(class="btn" href="#") ПОДРОБНЕЕ      
+        section.projects.indent.parallax-window(data-parallax="scroll" data-speed="0.7"  data-image-src="./assets/img/main1.jpg")  
+          .container
+            .title-main-wrap.title-main-wrap_lighter-tile
+              h2.title-main Наши проекты
+              p.title-main__short-desc Компания KONE предлагает передовые решения в отрасли: экоэффективные лифты, эскалаторы, пассажирские конвейеры и автоматические двери. Узнайте больше о наших продуктах ниже:
+              p.title-main__short-desc Компания KONE предлагает передовые решения в отрасли: экоэффективные лифты, эскалаторы, пассажирские конвейеры и автоматические двери. Узнайте больше о наших продуктах ниже:
+            a(class="btn" href="#") ПОСМОТРЕТЬ      
+            
     include includes/footer/footer
 
 
