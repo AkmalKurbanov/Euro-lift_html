@@ -23,15 +23,31 @@
 }
 
 .header {
+  .logo {
+    @include xs {
+      margin-bottom: rem(20px);
+    }
+  }
+
   &__main {
     background-color: $wc;
     padding: rem(20px) 0;
+
+    @include sm {
+      padding: rem(10px) 0;
+    }
   }
 
   &__main-wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
+
+    @include xs {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__main-item {
@@ -39,8 +55,9 @@
     flex-direction: row;
     align-items: center;
 
-    @include xs {
-      display: none;
+    @include sm {
+      display: flex;
+      flex-direction: column-reverse;
     }
 
     &.main-item-js {
@@ -51,6 +68,19 @@
         padding-right: 0;
         justify-content: space-between;
         width: 100%;
+      }
+    }
+
+    .social {
+      margin-right: rem(20px);
+
+      @include sm {
+        margin-right: 0;
+        margin-top: rem(10px);
+      }
+
+      i {
+        color: #ababab;
       }
     }
   }

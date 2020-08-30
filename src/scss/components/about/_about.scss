@@ -4,7 +4,12 @@
   &__more-wrap {
     display: flex;
     justify-content: flex-end;
-    a{
+
+    @include xs {
+      justify-content: center;
+    }
+
+    a {
       font-size: rem(18px);
       line-height: rem(24px);
       text-transform: uppercase;
@@ -166,7 +171,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
   }
 
   &__total-icon {

@@ -2,6 +2,27 @@
   flex: 0 0 auto;
   background-color: $bc;
   z-index: 9;
+
+  .logo {
+    margin-bottom: rem(50px);
+
+    @include lg {
+      margin-bottom: rem(45px);
+    }
+
+    @include md {
+      margin-bottom: rem(35px);
+    }
+
+    @include sm {
+      margin-bottom: rem(30px);
+    }
+
+    @include xs {
+      margin-bottom: rem(25px);
+    }
+  }
+
   &__wrap {
     padding: rem(65px) 0;
     display: flex;
@@ -34,17 +55,6 @@
 
     @include xs {
       flex-basis: 100%;
-    }
-  }
-
-  &__text {
-    padding: rem(20px) 0 rem(30px);
-    max-width: rem(280px);
-    width: 100%;
-
-    p {
-      color: #c1c1c1;
-      font-weight: 300;
     }
   }
 

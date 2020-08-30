@@ -198,10 +198,31 @@
   &__item-wrap {
     margin: rem(70px) 0 rem(30px);
 
+    @include lg {
+      margin: rem(60px) 0 rem(30px);
+    }
+
+    @include md {
+      margin: rem(50px) 0 rem(30px);
+    }
+
+    @include sm {
+      margin: rem(40px) 0 rem(30px);
+    }
+
+    @include xs {
+      margin: rem(35px) 0 rem(30px);
+    }
+
+
     ol {
       display: flex;
       flex-direction: row;
       counter-reset: item;
+
+      @include xs {
+        flex-direction: column;
+      }
 
       li {
         flex-basis: 20%;
@@ -236,6 +257,21 @@
           font-weight: 300;
         }
 
+        @include xs {
+          flex-basis: 100%;
+          padding: rem(20px) rem(10px);
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: flex-end;
+          font-size: rem(16px);
+          line-height: normal;
+          text-align: left;
+
+          &:first-child {
+            border-top: rem(1px) solid $wc;
+          }
+        }
 
         &:before,
         &:after {
@@ -255,7 +291,11 @@
           }
 
           @include sm {
-            width: calc(100% - 75px);
+            width: calc(100% - 68%);
+          }
+
+          @include xs {
+            display: none;
           }
         }
 
@@ -297,6 +337,14 @@
             max-width: rem(40px);
             height: rem(40px);
             top: rem(-20px);
+          }
+
+          @include xs {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: translateX(0);
+            margin-right: rem(10px);
           }
 
           &:before {
