@@ -163,6 +163,23 @@
       .about__total-name {
         color: $wc;
       }
+
+      .about__total-name {
+        font-size: rem(19px);
+
+        @include lg {
+          font-size: rem(16px);
+        }
+
+        @include md {
+          font-size: rem(14px);
+        }
+
+        @include sm {
+          font-size: rem(12px);
+          text-transform: none;
+        }
+      }
     }
   }
 

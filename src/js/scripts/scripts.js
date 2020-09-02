@@ -56,14 +56,6 @@ if ($(window).width() > 575) {
 }
 
 
-
-$('.parallax-window').parallax({
-  overScrollFix: true,
-  androidFix: true,
-});
-
-
-
 var windowHeight = $(window).height();
 
 $(document).on('scroll', function () {
@@ -105,3 +97,17 @@ $(".phone-js").inputmask({
 
 
 $('.services__block:even').find('.services__desc').addClass('left-desc');
+
+
+// contacts
+$('.contacts-trigger').on('click', function () {
+  setTimeout(function () {
+    $('.contacts-window__wrap').addClass('open-window');
+  }, 400);
+  $('.contacts-window').css('display', 'flex');
+});
+$('.contacts-window__close-btn').on('click', function () {
+  $('.contacts-window__wrap').removeClass('open-window');
+  $('.contacts-window').fadeOut();
+});
+// contacts end

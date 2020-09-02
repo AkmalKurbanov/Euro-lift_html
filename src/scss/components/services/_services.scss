@@ -1,4 +1,16 @@
 .services {
+  &.services.indent.parallax-window {
+    background-attachment: fixed;
+
+    @include xs {
+      background-attachment: inherit;
+    }
+
+    &:before {
+      background-color: rgba($bc, 0.62);
+    }
+  }
+
   &__banner {
     min-height: rem(360px);
     position: relative;
@@ -259,7 +271,7 @@
 
         @include xs {
           flex-basis: 100%;
-          padding: rem(20px) rem(10px);
+          padding: rem(10px);
           display: flex;
           flex-direction: row-reverse;
           align-items: center;

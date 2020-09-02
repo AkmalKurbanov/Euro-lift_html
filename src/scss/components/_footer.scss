@@ -1,6 +1,6 @@
 .footer {
   flex: 0 0 auto;
-  background-color: $bc;
+  background-color: $wc;
   z-index: 9;
 
   .logo {
@@ -59,7 +59,7 @@
   }
 
   &__title {
-    color: $wc;
+    color: $bc;
     text-transform: uppercase;
     font-size: rem(18px);
     margin-bottom: rem(30px);
@@ -101,7 +101,7 @@
       }
 
       a {
-        color: #c1c1c1;
+        color: $bc;
         text-transform: uppercase;
         font-family: $stb;
 
@@ -168,7 +168,7 @@
       }
 
       * {
-        color: #c1c1c1;
+        color: $bc;
         font-family: $stb;
 
         @include lg {
@@ -189,7 +189,7 @@
         color: $mc;
 
         &:hover {
-          color: $wc;
+          color: $bc;
         }
       }
 
@@ -210,9 +210,10 @@
   }
 
   &__bottom {
-    background-color: #1a1d23;
+    background-color: $wc;
     color: $wc;
     padding: rem(15px) 0;
+    border-top: rem(1px) solid $mc;
   }
 
   &__bottom-wrap {
@@ -235,7 +236,7 @@
     }
 
     p {
-      color: #969696;
+      color: $bc;
       font-size: rem(14px);
 
       @include xs {
@@ -254,6 +255,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      a{
+        color: $bc;
+      }
     }
   }
 }

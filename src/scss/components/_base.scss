@@ -396,6 +396,10 @@ button {
 .parallax-window {
   position: relative;
   text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
   &:before {
     position: absolute;
@@ -404,7 +408,7 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba($bc, .5);
+    background-color: rgba($bc, .62);
   }
 }
 
@@ -644,7 +648,6 @@ button {
 
 // modal window end
 
-
 .load-effect {
   transition: $tr;
 
@@ -652,5 +655,13 @@ button {
   &:after {
     transform: translateX(100%);
     z-index: 999;
+  }
+}
+
+.projects {
+  &.parallax-window {
+    &:before {
+      background-color: rgba(#030f2f, 0.62);
+    }
   }
 }
